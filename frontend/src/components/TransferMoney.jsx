@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSnackbar } from 'notistack'; // Import useSnackbar
+import { useSnackbar } from 'notistack';
 
 const TransferMoney = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { enqueueSnackbar } = useSnackbar(); // Hook for notifications
+  const { enqueueSnackbar } = useSnackbar();
 
   const [amount, setAmount] = useState("");
   const [customers, setCustomers] = useState([]);
@@ -16,7 +16,7 @@ const TransferMoney = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await fetch("https://banking-system-wjyob183e-vishals-projects-dd46cdeb.vercel.app/api/customers");
+        const response = await fetch("https://banking-system-j9n180bp5-vishals-projects-dd46cdeb.vercel.app/api/customers");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -42,7 +42,7 @@ const TransferMoney = () => {
     }
 
     try {
-      const response = await fetch("https://banking-system-wjyob183e-vishals-projects-dd46cdeb.vercel.app/api/customers/transfer", {
+      const response = await fetch("https://banking-system-j9n180bp5-vishals-projects-dd46cdeb.vercel.app/api/customers/transfer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
