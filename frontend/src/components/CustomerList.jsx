@@ -19,7 +19,7 @@ const CustomerList = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await axios.get('http://localhost:5500/api/customers');
+        const response = await axios.get('https://banking-system-wjyob183e-vishals-projects-dd46cdeb.vercel.app/api/customers');
         setCustomers(response.data);
       } catch (error) {
         console.error("Error fetching customers:", error);
@@ -49,7 +49,7 @@ const CustomerList = () => {
 
     if (newCustomer.name && newCustomer.email && newCustomer.currentBalance) {
       try {
-        const response = await axios.post('http://localhost:5500/api/customers/create', newCustomer);
+        const response = await axios.post('https://banking-system-wjyob183e-vishals-projects-dd46cdeb.vercel.app/api/customers/create', newCustomer);
         if (response.status >= 200 && response.status < 300) {
           const data = response.data;
           setCustomers((prev) => [...prev, data]);

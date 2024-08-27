@@ -16,7 +16,7 @@ const TransferMoney = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await fetch("http://localhost:5500/api/customers");
+        const response = await fetch("https://banking-system-wjyob183e-vishals-projects-dd46cdeb.vercel.app/api/customers");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -42,7 +42,7 @@ const TransferMoney = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5500/api/customers/transfer", {
+      const response = await fetch("https://banking-system-wjyob183e-vishals-projects-dd46cdeb.vercel.app/api/customers/transfer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

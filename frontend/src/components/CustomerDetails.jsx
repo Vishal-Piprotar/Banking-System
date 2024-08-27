@@ -13,7 +13,7 @@ const CustomerDetails = () => {
   useEffect(() => {
     const fetchCustomer = async () => {
       try {
-        const response = await axios.get(`http://localhost:5500/api/customers/${id}`);
+        const response = await axios.get(`https://banking-system-wjyob183e-vishals-projects-dd46cdeb.vercel.app/api/customers/${id}`);
         setCustomer(response.data);
       } catch (error) {
         console.error("Error fetching customer details:", error);
